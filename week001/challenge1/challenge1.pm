@@ -15,8 +15,11 @@ sub main {
 
 sub _update_first_occurrences {
     my $string = shift;
-    $string =~ s/e/E/;
-    return $string;
+    if ( $string =~ /e/ ) {
+        $string =~ s/e/E/;
+        return $string;
+    }
+    return "Invalid string: '$string'";
 }
 
 sub _get_total_occurrences {
