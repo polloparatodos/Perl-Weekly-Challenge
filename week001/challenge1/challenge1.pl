@@ -11,19 +11,15 @@ print "There are '$pwc_occurrences' occurrences of the letter 'e' in '$pwc_modif
 
 sub _update_first_occurrences {
     my $string = shift;
-
     $string =~ s/e/E/;
-
     return $string;
 }
 
 sub _get_total_occurrences {
     my $string = shift;
     my @e_array = ();
-
     for my $char (split('', $string)){
         push(@e_array, $char) if $char eq 'e';
     }
-
     return scalar(@e_array);
 }
