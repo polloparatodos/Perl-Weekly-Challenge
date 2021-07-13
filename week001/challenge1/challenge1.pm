@@ -3,11 +3,15 @@
 use strict;
 use warnings;
 
-my $pwc_string = 'Perl Weekly Challenge';
-my $pwc_modified = _update_first_occurrences($pwc_string);
-my $pwc_occurrences = _get_total_occurrences($pwc_modified);
+main() if not caller();
 
-print "There are '$pwc_occurrences' occurrences of the letter 'e' in '$pwc_modified'\n";
+sub main {
+    my $pwc_string      = 'Perl Weekly Challenge';
+    my $pwc_modified    = _update_first_occurrences($pwc_string);
+    my $pwc_occurrences = _get_total_occurrences($pwc_modified);
+
+    print "There are '$pwc_occurrences' occurrences of the letter 'e' in '$pwc_modified'\n";
+}
 
 sub _update_first_occurrences {
     my $string = shift;
@@ -27,3 +31,5 @@ sub _get_total_occurrences {
 
     return scalar(@e_array);
 }
+
+1;
